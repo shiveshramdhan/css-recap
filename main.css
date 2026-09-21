@@ -1,0 +1,21 @@
+:root{
+--acid-lime: #C8FF00;
+--void-black: #0A0A0A;
+--bone: #F0EFE7;
+--raw-silver: #AAAAAA;
+--Dark-Grey: #292929;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+
+h1{
+    color: var(--acid-lime);
+}
