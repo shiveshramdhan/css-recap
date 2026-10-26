@@ -1,21 +1,646 @@
-:root{
---acid-lime: #C8FF00;
---void-black: #0A0A0A;
---bone: #F0EFE7;
---raw-silver: #AAAAAA;
---Dark-Grey: #292929;
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --acid-lime: #c8ff00;
+    --void-black: #080808;
+    --bone: #f0efe7;
+    --raw-silver: #aaa;
+    --muted: #77766f;
+    --display-font: "Barlow Condensed", Impact, "Arial Narrow", sans-serif;
 }
 
-
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
-    margin: 0;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    margin: 0;
+    background: var(--void-black);
+    color: var(--bone);
+    font-family: var(--display-font);
+    -webkit-font-smoothing: antialiased;
+}
 
-h1{
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-header {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 56px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+    border-bottom: 1px solid rgb(255 255 255 / 8%);
+    background: rgb(8 8 8 / 88%);
+}
+
+.logo {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .06em;
+}
+
+.site-nav,
+.site-footer nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 3vw, 42px);
+}
+
+.site-nav a,
+.site-footer nav a {
+    color: #aaa9a1;
+    font-size: 9px;
+    letter-spacing: .08em;
+}
+
+.site-nav a:last-child {
+    color: var(--bone);
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    min-height: 640px;
+    align-items: center;
+    overflow: hidden;
+    padding: 90px 4% 50px;
+    background-color: var(--void-black);
+    background-image: linear-gradient(90deg, rgb(0 0 0 / 55%), rgb(0 0 0 / 13%)), url("assets/headphones.avif");
+    background-position: center 49%;
+    background-size: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1,
+.campaign-copy h2,
+.cta-content h2 {
+    margin: 0;
+    font-size: clamp(4.5rem, 11vw, 10.5rem);
+    font-weight: 900;
+    letter-spacing: -.045em;
+    line-height: .82;
+}
+
+.hero h1 em,
+.campaign-copy em {
     color: var(--acid-lime);
+    font-style: italic;
+}
+
+.hero-reference,
+.hero-side-label {
+    position: absolute;
+    top: 105px;
+    color: #77766f;
+    line-height: 1.55;
+}
+
+.hero-reference {
+    right: 4%;
+    text-align: right;
+}
+
+.hero-side-label {
+    display: none;
+}
+
+.small-label {
+    margin: 0;
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: .12em;
+}
+
+.hero-purchase {
+    display: flex;
+    align-items: end;
+    gap: 34px;
+    margin-top: 36px;
+}
+
+.hero-purchase .small-label {
+    color: #85847d;
+}
+
+.price {
+    margin: 6px 0 0;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.shop-button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 0 22px;
+    background: var(--acid-lime);
+    color: var(--void-black);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    transition: background-color .2s ease, transform .2s ease;
+}
+
+.shop-button:hover {
+    transform: translateY(-2px);
+    background: var(--bone);
+}
+
+.manifesto {
+    min-height: 390px;
+    padding: 75px 4% 55px;
+    background: var(--bone);
+    color: var(--void-black);
+}
+
+.manifesto h2 {
+    margin: 0 0 28px;
+    font-size: clamp(3.25rem, 7.4vw, 7rem);
+    font-weight: 900;
+    letter-spacing: -.045em;
+    line-height: .82;
+}
+
+.manifesto .small-label {
+    color: #85847d;
+}
+
+.product {
+    position: relative;
+    display: grid;
+    min-height: 650px;
+    place-items: center;
+    overflow: hidden;
+    background-color: #050505;
+    background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 20%)), url("assets/headphones2.avif");
+    background-position: center 50%;
+    background-size: cover;
+}
+
+.product h2 {
+    margin: 0;
+    color: rgb(240 239 231 / 10%);
+    font-size: clamp(2rem, 5vw, 5rem);
+    font-style: italic;
+    font-weight: 900;
+    letter-spacing: -.04em;
+}
+
+.product-label {
+    position: absolute;
+    display: grid;
+    gap: 7px;
+    color: #79796f;
+}
+
+.product-label strong {
+    color: var(--acid-lime);
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.product-label-left {
+    top: 11%;
+    left: 4%;
+}
+
+.product-label-right {
+    top: 25%;
+    right: 4%;
+    text-align: right;
+}
+
+.product-label-bottom-left {
+    bottom: 11%;
+    left: 4%;
+}
+
+.product-label-bottom-right {
+    right: 4%;
+    bottom: 20%;
+    text-align: right;
+}
+
+.specifications {
+    padding: 58px 4% 46px;
+    background: var(--void-black);
+}
+
+.specifications > h2,
+.colors > h2 {
+    margin: 0 0 32px;
+    color: #6f6e67;
+    font-weight: 500;
+}
+
+.spec-list {
+    margin: 0;
+    border-top: 1px solid #242424;
+}
+
+.spec-row {
+    display: grid;
+    min-height: 82px;
+    grid-template-columns: 40% 1fr;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #242424;
+}
+
+.spec-row dt {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: clamp(13px, 1.7vw, 20px);
+    font-weight: 800;
+}
+
+.spec-number {
+    color: #55544e;
+    font-size: 8px;
+    font-weight: 400;
+}
+
+.spec-row dd {
+    margin: 0;
+    color: #8b8a83;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.campaign-image {
+    position: relative;
+    display: flex;
+    min-height: 590px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5%;
+    background: #20211d url("assets/headphones3.avif") center 48% / cover no-repeat;
+}
+
+.campaign-image::before {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 20%, rgb(0 0 0 / 8%) 58%, rgb(0 0 0 / 28%));
+    content: "";
+}
+
+.campaign-copy {
+    position: relative;
+    text-align: right;
+}
+
+.campaign-copy h2 {
+    font-size: clamp(3.6rem, 8vw, 8rem);
+}
+
+.campaign-copy .small-label {
+    margin-top: 20px;
+    color: #b7b5ac;
+}
+
+.battery {
+    min-height: 650px;
+    padding: 75px 4% 55px;
+    background: var(--bone);
+    color: var(--void-black);
+}
+
+.battery h2 {
+    margin: 0;
+    font-size: clamp(8rem, 20vw, 19rem);
+    font-weight: 900;
+    letter-spacing: -.07em;
+    line-height: .72;
+}
+
+.battery-details {
+    display: flex;
+    max-width: 700px;
+    margin-top: 56px;
+}
+
+.battery-details > div {
+    display: grid;
+    flex: 1;
+    gap: 7px;
+    padding: 0 24px;
+    border-left: 1px solid #d8d7cf;
+}
+
+.battery-details > div:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.battery-details .small-label,
+.battery-details span {
+    color: #77766f;
+    font-size: 8px;
+}
+
+.battery-details strong {
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.colors {
+    padding: 60px 4% 70px;
+    background: var(--void-black);
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.color-card {
+    min-height: 220px;
+    padding: 34px 28px;
+    border: 1px solid #242424;
+}
+
+.color-card + .color-card {
+    border-left: 0;
+}
+
+.color-card .small-label {
+    color: #88877f;
+}
+
+.color-card h3 {
+    margin: 38px 0 8px;
+    font-size: clamp(17px, 2.4vw, 28px);
+    font-weight: 800;
+}
+
+.color-card > p:last-child {
+    margin: 0;
+    color: #8b8a83;
+    font-size: 11px;
+}
+
+.color-silver {
+    background: var(--raw-silver);
+    color: var(--void-black);
+}
+
+.color-silver .small-label,
+.color-silver > p:last-child {
+    color: #55544e;
+}
+
+.color-bone {
+    background: var(--bone);
+    color: var(--void-black);
+}
+
+.color-bone .small-label,
+.color-bone > p:last-child {
+    color: #77766f;
+}
+
+.final-cta {
+    position: relative;
+    display: flex;
+    min-height: 500px;
+    align-items: center;
+    overflow: hidden;
+    padding: 65px 4%;
+    background: #030303 url("assets/headphones2.avif") center 48% / cover no-repeat;
+}
+
+.final-cta::before {
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 48%);
+    content: "";
+}
+
+.cta-background {
+    position: absolute;
+    right: 3%;
+    color: rgb(200 255 0 / 4%);
+    font-size: clamp(5rem, 18vw, 17rem);
+    font-weight: 900;
+    letter-spacing: -.07em;
+    white-space: nowrap;
+}
+
+.cta-content {
+    position: relative;
+}
+
+.cta-content h2 {
+    margin-bottom: 35px;
+    font-size: clamp(4.75rem, 10vw, 9rem);
+    font-style: italic;
+}
+
+.cta-note {
+    position: absolute;
+    bottom: 13%;
+    left: 33%;
+    color: #77766f;
+}
+
+.site-footer {
+    display: flex;
+    min-height: 72px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 4%;
+    border-top: 1px solid #202020;
+    background: var(--void-black);
+}
+
+.site-footer .small-label,
+.site-footer nav a {
+    color: #686760;
+    font-size: 7px;
+}
+
+@media (max-width: 700px) {
+    .site-header {
+        height: 48px;
+    }
+
+    .site-nav {
+        gap: 12px;
+    }
+
+    .site-nav a {
+        font-size: 8px;
+    }
+
+    .hero {
+        min-height: 300px;
+        padding-top: 100px;
+        background-position: 57% center;
+    }
+
+    .hero-reference {
+        top: 70px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3.55rem, 12vw, 5.5rem);
+    }
+
+    .hero-purchase {
+        margin-top: 28px;
+    }
+
+    .manifesto {
+        min-height: 220px;
+        padding: 38px 4% 30px;
+    }
+
+    .manifesto h2 {
+        font-size: clamp(2.5rem, 6.7vw, 5rem);
+    }
+
+    .product {
+        min-height: 300px;
+    }
+
+    .specifications {
+        padding-top: 42px;
+    }
+
+    .spec-row {
+        min-height: 90px;
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 15px 0;
+    }
+
+    .spec-row dt {
+        gap: 16px;
+    }
+
+    .spec-row dd {
+        padding-left: 31px;
+    }
+
+    .campaign-image {
+        min-height: 300px;
+        background-position: 45% center;
+    }
+
+    .battery {
+        min-height: 390px;
+        padding-top: 70px;
+    }
+
+    .battery h2 {
+        font-size: clamp(7rem, 23vw, 11rem);
+    }
+
+    .battery-details {
+        margin-top: 42px;
+    }
+
+    .battery-details > div {
+        padding: 0 12px;
+    }
+
+    .battery-details strong {
+        font-size: 10px;
+    }
+
+    .color-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .color-card {
+        min-height: 130px;
+        padding: 14px 10px;
+    }
+
+    .color-card + .color-card {
+        border-left: 0;
+    }
+
+    .color-card h3 {
+        margin-top: 20px;
+        font-size: clamp(11px, 2.5vw, 17px);
+    }
+
+    .color-card > p:last-child {
+        font-size: 8px;
+    }
+
+    .color-silver,
+    .color-bone {
+        border-left: 0;
+    }
+
+    .final-cta {
+        min-height: 300px;
+    }
+
+    .cta-note {
+        bottom: 9%;
+        left: 4%;
+        font-size: 7px;
+    }
+
+    .site-footer {
+        flex-wrap: wrap;
+        min-height: 95px;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 520px) {
+    .color-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .color-card {
+        min-height: 150px;
+        padding: 22px;
+    }
+
+    .color-card + .color-card {
+        border-top: 0;
+        border-left: 1px solid #242424;
+    }
+
+    .color-card h3 {
+        margin-top: 22px;
+        font-size: 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+    }
 }
