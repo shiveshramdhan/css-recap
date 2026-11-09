@@ -4,7 +4,6 @@
     --acid-lime: #c8ff00;
     --void-black: #080808;
     --bone: #f0efe7;
-    --raw-silver: #aaa;
     --muted: #77766f;
     --display-font: "Barlow Condensed", Impact, "Arial Narrow", sans-serif;
 }
@@ -244,8 +243,7 @@ a {
     background: var(--void-black);
 }
 
-.specifications > h2,
-.colors > h2 {
+.specifications > h2 {
     margin: 0 0 32px;
     color: #6f6e67;
     font-weight: 500;
@@ -360,62 +358,6 @@ a {
 .battery-details strong {
     font-size: 13px;
     font-weight: 800;
-}
-
-.colors {
-    padding: 60px 4% 70px;
-    background: var(--void-black);
-}
-
-.color-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.color-card {
-    min-height: 220px;
-    padding: 34px 28px;
-    border: 1px solid #242424;
-}
-
-.color-card + .color-card {
-    border-left: 0;
-}
-
-.color-card .small-label {
-    color: #88877f;
-}
-
-.color-card h3 {
-    margin: 38px 0 8px;
-    font-size: clamp(17px, 2.4vw, 28px);
-    font-weight: 800;
-}
-
-.color-card > p:last-child {
-    margin: 0;
-    color: #8b8a83;
-    font-size: 11px;
-}
-
-.color-silver {
-    background: var(--raw-silver);
-    color: var(--void-black);
-}
-
-.color-silver .small-label,
-.color-silver > p:last-child {
-    color: #55544e;
-}
-
-.color-bone {
-    background: var(--bone);
-    color: var(--void-black);
-}
-
-.color-bone .small-label,
-.color-bone > p:last-child {
-    color: #77766f;
 }
 
 .final-cta {
@@ -568,33 +510,6 @@ a {
         font-size: 10px;
     }
 
-    .color-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .color-card {
-        min-height: 130px;
-        padding: 14px 10px;
-    }
-
-    .color-card + .color-card {
-        border-left: 0;
-    }
-
-    .color-card h3 {
-        margin-top: 20px;
-        font-size: clamp(11px, 2.5vw, 17px);
-    }
-
-    .color-card > p:last-child {
-        font-size: 8px;
-    }
-
-    .color-silver,
-    .color-bone {
-        border-left: 0;
-    }
-
     .final-cta {
         min-height: 300px;
     }
@@ -609,27 +524,6 @@ a {
         flex-wrap: wrap;
         min-height: 95px;
         gap: 12px;
-    }
-}
-
-@media (max-width: 520px) {
-    .color-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .color-card {
-        min-height: 150px;
-        padding: 22px;
-    }
-
-    .color-card + .color-card {
-        border-top: 0;
-        border-left: 1px solid #242424;
-    }
-
-    .color-card h3 {
-        margin-top: 22px;
-        font-size: 17px;
     }
 }
 
